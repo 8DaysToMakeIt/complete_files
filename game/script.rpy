@@ -35,6 +35,7 @@ label start:
         call modstart
         if sayori_confess == True:
             call mod_day1_main
+            call mod_day1_afternoon
         else:
             call mod_day1_dead
 

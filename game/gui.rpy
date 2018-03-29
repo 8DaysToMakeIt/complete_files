@@ -17,8 +17,8 @@ init -2 python:
 
 
 
-define -2 gui.hover_sound = "gui/sfx/hover.ogg"
-define -2 gui.activate_sound = "gui/sfx/select.ogg"
+define -2 gui.hover_sound = "mod_assets/hover_sound.ogg"
+define -2 gui.activate_sound = "mod_assets/activate_sound.ogg"
 define -2 gui.activate_sound_glitch = "gui/sfx/select_glitch.ogg"
 
 
@@ -29,7 +29,7 @@ define -2 gui.activate_sound_glitch = "gui/sfx/select_glitch.ogg"
 define -2 gui.accent_color = '#ffffff'
 
 
-define -2 gui.idle_color = '#aaaaaa'
+define -2 gui.idle_color = '#777799'
 
 
 

@@ -47,9 +47,14 @@ init python:
         renpy.take_screenshot()
         renpy.save("1-1",extra_info="CloudBreaker AutoSave")
         renpy.save_persistent()
-        
-
-
+    def playthunder(trans, st, at):
+        thundersound = renpy.random.randint(1,3)
+        if (thundersound == 1):
+            renpy.play("mod_assets/gentlethunder.ogg", channel="sound")  
+        if (thundersound == 2):
+            renpy.play("mod_assets/gentlethunder2.ogg", channel="sound") 
+        if (thundersound == 3):
+            renpy.play("mod_assets/gentlethunder3.ogg", channel="sound") 
 
 
 
@@ -96,6 +101,10 @@ define audio.page_turn = "sfx/pageflip.ogg"
 define audio.fall = "sfx/fall.ogg"
 
 define audio.confesslofi = "<to 196.693 loop 11.621>mod_assets/St4-confession.mp3"
+define audio.lctheme = "mod_assets/St4-LCtheme.mp3"
+
+define alphadissolve = Dissolve(0.5, alpha=True)
+define alphadissolve2 = Dissolve(2.0, alpha=True)
 
 image black = "#000000"
 image dark = "#000000e4"
@@ -127,6 +136,8 @@ image bg bedroom = "bg/bedroom.png"
 image bg sayori_bedroom = "bg/sayori_bedroom.png"
 image bg house = "bg/house.png"
 image bg kitchen = "bg/kitchen.png"
+
+image bg courtyard = "mod_assets/schooloutside.png"
 
 image bg notebook = "bg/notebook.png"
 image bg notebook-glitch = "bg/notebook-glitch.png"
@@ -242,6 +253,7 @@ image sayori 1v = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "say
 image sayori 1w = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "sayori/w.png")
 image sayori 1x = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "sayori/x.png")
 image sayori 1y = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "sayori/y.png")
+image sayori 1tq = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "mod_assets/sayoritq.png")
 
 image sayori 2 = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/2r.png", (0, 0), "sayori/a.png")
 image sayori 2a = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/2r.png", (0, 0), "sayori/a.png")

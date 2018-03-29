@@ -518,8 +518,11 @@ init -501 screen main_menu() tag menu:
     else:
         add "/mod_assets/titlebg.png"
         add "menu_bg"
+        add "menu_lightning"
+        add "mod_assets/bedroom_trans_window.png"
         #add "menu_art_y"
         #add "menu_art_n"
+        add "menu_art_s"
         frame
 
 
@@ -545,9 +548,9 @@ init -501 screen main_menu() tag menu:
         add "menu_art_s_ghost"
         add "menu_art_m_ghost"
     else:
-        add "sayori 1t":
-            xpos 0.3
-            zoom 0.85
+        #add "sayori 1t":
+        #    xpos 0.3
+        #    zoom 0.85
         add "menu_particles"
         #if persistent.playthrough != 4:
         #    add "menu_art_m"
@@ -780,14 +783,14 @@ init -1 style about_label_text:
 init -501 screen save() tag menu:
 
 
-
+    add "/mod_assets/titlebg.png"
     use file_slots(_("Save"))
 
 
 init -501 screen load() tag menu:
 
 
-
+    add "/mod_assets/titlebg.png"
     use file_slots(_("Load"))
 
 init -1 python:
@@ -922,7 +925,7 @@ init -1 style slot_button_text:
 init -501 screen preferences() tag menu:
 
 
-
+    add "/mod_assets/titlebg.png"
     if renpy.mobile:
         $ cols = 2
     else:

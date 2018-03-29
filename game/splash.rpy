@@ -27,11 +27,73 @@ image menu_bg:
 image game_menu_bg:
     topleft
     "mod_assets/loadraineffect.png"
-    menu_bg_loop
+    menu_bg_move
 
 image menu_fade:
     "white"
     menu_fadeout
+
+image menu_lightning:
+    subpixel True
+    alpha 0.0
+    xcenter 640
+    ycenter 360
+    block:
+        choice:
+            "mod_assets/lightning.png"
+        choice:
+            "mod_assets/lightning2.png"
+        function playthunder
+        parallel:
+            choice:
+               xpos 0.4
+            choice:
+               xpos 0.5
+            choice:
+               xpos 0.6
+            choice:
+               xpos 0.7
+            choice:
+               xpos 0.8
+            choice:
+               xpos 0.9
+        parallel:
+            choice:
+               ypos 0.6
+            choice:
+               ypos 0.7
+            choice:
+               ypos 0.8
+            choice:
+               ypos 0.9
+        choice:
+            pause 3.0
+        choice:
+            pause 4.5
+        choice:
+            pause 6.2
+        choice:
+            pause 9.1
+        choice:
+            pause 11.2
+        alpha 0.3
+        pause 0.05
+        alpha 0.0
+        pause 0.05
+        alpha 1.0
+        pause 0.03
+        alpha 0.8
+        pause 0.02
+        alpha 0.6
+        pause 0.02
+        alpha 0.4
+        pause 0.02
+        alpha 0.4
+        pause 0.02
+        alpha 0.2
+        pause 0.02
+        alpha 0.0
+        repeat
 
 image menu_art_y:
     subpixel True
@@ -51,11 +113,25 @@ image menu_art_n:
 
 image menu_art_s:
     subpixel True
-    "gui/menu_art_s.png"
-    xcenter 510
-    ycenter 500
-    zoom 0.68
-    menu_art_move(0.68, 510, 0.68)
+    "sayori 1t"
+    xpos 0.2
+    ycenter 350
+    zoom 0.8
+    rotate 0.2   
+    block:
+        choice:
+           "sayori 1v" with alphadissolve
+        choice:
+           "sayori 1tq" with alphadissolve
+        choice:
+           "sayori 1t" with alphadissolve
+        choice:
+           "sayori 4w" with alphadissolve
+        choice:
+           pass
+        ease 3.0 xpos 0.198 rotate -0.2
+        ease 3.0 xpos 0.202 rotate 0.2
+        repeat    
 
 image menu_art_m:
     subpixel True
@@ -133,7 +209,7 @@ transform menu_bg_move:
     ypos -500
     parallel:
         xoffset 0 yoffset 0
-        linear 1.5 xoffset 100 yoffset 400
+        linear 0.5 xoffset 100 yoffset 400
         repeat
     #parallel:
     #    ypos 0
@@ -192,11 +268,11 @@ image intro:
 
 image intro2:
     truecenter
-    "black"
+    "white"
     0.5
     "mod_assets/cblogo.png" with Dissolve(0.5, alpha=True)
     2.5
-    "black" with Dissolve(0.5, alpha=True)
+    "white" with Dissolve(0.5, alpha=True)
     0.5
 
 image warning:
@@ -207,7 +283,7 @@ image warning:
     "white" with Dissolve(0.5, alpha=True)
     0.5
 
-image tos = "bg/warning.png"
+image tos = "mod_assets/warning_bedroom.png"
 image tos2 = "bg/warning2.png"
 
 
@@ -270,16 +346,16 @@ label splashscreen:
         scene tos
         with Dissolve(1.0)
         pause 1.0
-        "This game is a fan mod of Doki Doki Literature Club from Team Salvato."
-        "The original game is available at http://ddlc.moe. Do not play Doki Doki CloudBreaker! unless you have played DDLC previously."
-        "Additionally, certain eventualities in 'Doki Doki CloudBreaker!' may result in emotional distress. Those with depression, anxiety, or other conditions may not be able to play safely."
+        "This game is a fan mod of {i}Doki Doki Literature Club{/i} from Team Salvato."
+        "The original game is available at http://ddlc.moe. Do not play {i}Doki Doki CloudBreaker!{/i} unless you have played DDLC previously."
+        "Additionally, certain eventualities in {i}Doki Doki CloudBreaker!{/i} may result in emotional distress. Those with depression, anxiety, or other conditions may not be able to play safely."
         "Do not play this mod if you are not certain if it may be safe for you."
         menu:
-            "By playing Doki Doki CloudBreaker!, I understand that this is a fan mod not associated with Team Salvato, and I accept any potential risks upon myself at no fault of Team CloudBreaker."
+            "By playing {i}Doki Doki CloudBreaker!{/i}, I understand that this is a fan mod not associated with Team Salvato, and I accept any potential risks upon myself at no fault of Team CloudBreaker."
             "I agree.":
                 pass
         $ persistent.first_run = True
-        scene tos2
+        scene sayori_bedroom
         with Dissolve(1.5)
         pause 1.0
         scene white

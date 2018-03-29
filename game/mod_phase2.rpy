@@ -170,7 +170,7 @@ label mod_day1_wakeup:
     "After just a few more minutes, we're back in the clubroom."
     scene bg club_day with wipeleft_scene 
     show monika 1b at t11
-    play music t8 fadeout 2.0
+    play music lctheme fadeout 2.0
     m "Welcome back!"
     m 1d "Is Sayori doing alright?"
     mc "{cps=30}Yeah, she--{/cps}{nw}"
@@ -265,6 +265,7 @@ label mod_day1_waitoutside:
     "I really hope she's okay."
     "A few minutes later, we arrive in the clubroom."
     scene bg club_day with wipeleft_scene
+    play music lctheme fadeout 2.0
     "During our walk there, Sayori was able to build her facade back up... at least a little bit."
     "I don't blame her. I'm the only one who's seen her darker side."
     show monika 1b at t11
@@ -291,7 +292,7 @@ label mod_day1_ignore:
     "Nah, I think I'll let her get some rest."
     show monika at thide
     hide monika
-    play music t6 fadeout 2.0
+    play music lctheme fadeout 2.0
     "She must be a bit tired after everything she went through yesterday."
     "In the meantime, I take a good look around the room."
     "The walls are still a bit bare, but I figure it'd be easier to take care of that when the others arrive."
@@ -352,8 +353,46 @@ label mod_day1_ignore:
 
 label mod_day1_morning_converge:
     show black with wipeleft
-    hide black with wipeleft
+    scene bg club_day with wipeleft
+    show sayori 1y at t11
     "After about 15 minutes, the door flies open and Natsuki steps into the room with Yuri in tow."
+    show sayori 1a at t33
+    show natsuki 1d at t32
+    show yuri 1a at t31
+    n "Alright, it's festival time!"
+    "Sayori perks up upon seeing them enter the room."
+    show natsuki 1a
+    s 1x "Hey, Natsuki! Hey, Yuri!"
+    show sayori 1a
+    y 1b "Hello, Sayori."
+    y 1f "I know you left early on Friday, and I wanted to ask... is everything alright?"
+    s 1x "I just wasn't feeling well... I'm fine now!"
+    show yuri 1a
+    s 4r "Let's just get this thing started!"
+    show yuri 1c
+    "Yuri nods, then moves to help Monika hang the banner up."
+    show yuri at thide
+    hide yuri
+    show natsuki at t21
+    show sayori 1a at t22
+    "Meanwhile, Natsuki inspects the cupcakes to ensure I haven't ruined any of them."
+    show natsuki at thide
+    hide natsuki
+    show black with wipeleft
+    hide black with wipeleft
+    show monika 4b at t21
+    m "Hey, I printed the booklets using the school printers... would you mind proofreading them, [player]?"
+    m 2b "I didn't really check for mistakes, but I have my laptop so if there are any, I can just fix them."
+    mc "Sure thing!"
+    show monika 1a
+    "I pick up the booklet from my desk and hold it between me and Sayori."
+    mc "Wanna look it over together?"
+    show sayori 1q
+    "Sayori nods, and we start reading."
+    show black with wipeleft
+    call mod_day1_afternoon
+    
+    
     
 label mod_day1_dead:
     stop music fadeout 2.0
