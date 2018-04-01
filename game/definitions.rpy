@@ -102,6 +102,8 @@ define audio.fall = "sfx/fall.ogg"
 
 define audio.confesslofi = "<to 196.693 loop 11.621>mod_assets/St4-confession.mp3"
 define audio.lctheme = "mod_assets/St4-LCtheme.mp3"
+define audio.jazztrack = "mod_assets/St4-jazzyshit.ogg"
+define audio.downpour = "mod_assets/Downpour.mp3"
 
 define alphadissolve = Dissolve(0.5, alpha=True)
 define alphadissolve2 = Dissolve(2.0, alpha=True)
@@ -115,6 +117,7 @@ image end:
     truecenter
     "gui/end.png"
 image bg residential_day = "bg/residential.png"
+image bg residential_evening = "mod_assets/residential_evening.png"
 image bg class_day = "bg/class.png"
 image bg corridor = "bg/corridor.png"
 image bg club_day = "bg/club.png"
@@ -136,13 +139,22 @@ image bg bedroom = "bg/bedroom.png"
 image bg sayori_bedroom = "bg/sayori_bedroom.png"
 image bg house = "bg/house.png"
 image bg kitchen = "bg/kitchen.png"
+image bg kitchen_night = "mod_assets/kitchen_night.png"
+image bg bedroom_night = "mod_assets/bedroom_night.png"
 
 image bg courtyard = "mod_assets/schooloutside.png"
 
 image bg notebook = "bg/notebook.png"
 image bg notebook-glitch = "bg/notebook-glitch.png"
 
+image screendark = "mod_assets/screendarkener.png"
+
 image bg glitch = LiveTile("bg/glitch.jpg")
+
+image bg longfadebedroom:
+    "mod_assets/bedroom_night.png"
+    alpha 0.6
+    linear 10.0 alpha 0.0
 
 image glitch_color:
     ytile 3

@@ -49,10 +49,14 @@ label mod_day1_afternoon:
         "Let Sayori pay for lunch.":
             $ sayori_happiness = sayori_happiness + 1
             $ cb_save_reset()
+            show expression Text("[sayori_happiness]"):
+                ypos 0.5
             call mod_day1_s_pay
         "Pick up the tab for her.":
             $ sayori_happiness = sayori_happiness - 3
             $ cb_save_reset()
+            show expression Text("[sayori_happiness]"):
+                ypos 0.5
             call mod_day1_mc_pay
     return
 
@@ -80,7 +84,7 @@ label mod_day1_mc_pay:
     show sayori 1g
     mc "It's alright. Like I said, save your money for something else, okay?"
     show sayori 1d
-    "She looks up and gives me a weak smile."
+    "Sayori looks up and gives me a weak smile."
     "I fish my wallet out of my pocket and pay for our food."
     "As I do, I start to feel bad."
     show sayori 1f
@@ -114,13 +118,15 @@ label mod_day1_an_converge:
     show sayori 1q
     s "{i}Mmmf...!{/i}"
     play music t7 fadein 5.0
+    window hide
     $ renpy.pause(2)
     show sayori 1t
     show sayori 1v with alphadissolve2
+    window show
     "Almost immediately, her face turns red."
     s 1w "{i}Hahh...hahh...{/i}"
     s 1p "{i}{b}Spicyyyyy!!!{/b}{/i}" with hpunch
-    "Sayori reaches for her water bottle, almost fumbling and spilling it."
+    "Sayori frantically reaches for her water bottle, almost fumbling and spilling it."
     "As she guzzles the water, I can't help but chuckle a little at the scene."
     mc "If you had let me finish, I would've told you it was spicy..."
     s 5a "S-sorry..."
@@ -137,3 +143,6 @@ label mod_day1_an_converge:
     stop music fadeout 2.0
     "With that ordeal over, we finish our lunches, and then get ready to see what else there is to do at the festival."
     "Sayori seems excited, so I want to do everything I can to give her a good time."
+    window hide
+    scene black with wipeleft_scene
+    call mod_day1_evening

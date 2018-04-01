@@ -13,7 +13,7 @@ label modintro:
     call screen dialog("Oh, I get it. This is a mod.", ok_action=Return()) 
     call screen dialog("You don't want me to remove it. You want to experience something different.", ok_action=Return())
     pause 2.0
-    call screen dialog("...fine. I'll play your little game if it makes you happy.", ok_action=Return())
+    call screen dialog("...alright. I'll play your little game if it makes you happy.", ok_action=Return())
     call screen dialog("Here we go.", ok_action=Return()) 
     $ consolehistory = []
     call updateconsole ("renpy.full_restart()", "AuthorizationError: You do not have \n access to this command.")
@@ -21,7 +21,7 @@ label modintro:
     call screen dialog("...why can't I reset?", ok_action=Return())
     call screen dialog("Did you take my powers away, too?", ok_action=Return())
     pause 2.0
-    call screen dialog("...fine. I guess I'll just have to trust that you know what you are doing.", ok_action=Return())
+    call screen dialog("...alright. I guess I'll just have to trust that you know what you are doing.", ok_action=Return())
     pause 2.0
     call hideconsole
     menu:
@@ -34,7 +34,7 @@ label modintro:
     
 label modstart:
     show black zorder 4 with dissolve_cg
-    play music t10 fadeout 2.0
+    play music downpour fadeout 2.0
     mc "That's enough, Sayori..."
     mc "I don't want you to hurt anymore."
     "I slide my hand down Sayori's arm and squeeze her hand in my own."
@@ -52,19 +52,25 @@ label modstart:
             $ sayori_confess = True
             $ sayori_happiness = 3
             scene bg house with wipeleft_scene
-            show sayori 1ba zorder 2 at t11         
-            call modstart_end_yes
+            show sayori 2bv zorder 2 at t11  
             $ cb_save_reset()
+            show expression Text("[sayori_happiness]"):
+                ypos 0.5
+            call modstart_end_yes
         "You'll always be my dearest friend.":
             $ sayori_confess = False
             scene bg house with wipeleft_scene
-            show sayori 1ba zorder 2 at t11         
-            call modstart_end_no
+            show sayori 2bv zorder 2 at t11 
             $ cb_save_reset()
+            show expression Text("[sayori_happiness]"):
+                ypos 0.5
+            call modstart_end_no
 
     return
 
 label modstart_end_yes:
+    show expression Text("[sayori_happiness]"):
+        ypos 0.5
     mc "I love you."
     s 1bv "Eh--?"
     mc "Those are my true feelings."

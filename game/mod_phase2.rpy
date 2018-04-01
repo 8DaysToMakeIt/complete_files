@@ -52,14 +52,20 @@ label mod_day1_main:
         "Go wake her up.":
             $ sayori_happiness = sayori_happiness + 1
             $ cb_save_reset()
+            show expression Text("[sayori_happiness]"):
+                ypos 0.5
             call mod_day1_wakeup
         "Let her sleep in.":
             $ sayori_happiness = sayori_happiness - 3
             $ cb_save_reset()
+            show expression Text("[sayori_happiness]"):
+                ypos 0.5
             call mod_day1_ignore
         "Wait outside her house.":
             $ sayori_happiness = sayori_happiness - 1
             $ cb_save_reset()
+            show expression Text("[sayori_happiness]"):
+                ypos 0.5
             call mod_day1_waitoutside
     return 
 
@@ -69,7 +75,7 @@ label mod_day1_wakeup:
     mc "I actually am a bit worried about Sayori now. I'll go check up on her."
     m 1b "Alrighty then! Just don't leave me here alone for too long~"
     scene black with wipeleft
-    "After hearing her words I immediately exit the club and school, and begin walking to Sayori's house."
+    "After hearing Monika's words I immediately exit the club and school, and begin walking to Sayori's house."
     scene bg house with wipeleft
     "After a few minutes of walking I reach Sayori's house."
     "I ring the bell once, but don't get an answer."
@@ -96,7 +102,7 @@ label mod_day1_wakeup:
     mc "You awake?"
     "As I peek in I notice Sayori sleeping in her bed."
     play music "bgm/5_sayori.ogg" fadeout 2.0
-    "Looking at her sleeping like that, it's kinda heartwarming... I wonder what she is dreaming of?"
+    "Looking at her sleeping like that, it's kind of heartwarming... I wonder what she is dreaming of?"
     "But now I gotta focus. How can I wake her up...?"
     "After some thinking, I decide to just gently shake her."
     mc "Come on Sayori, wake up."
@@ -132,7 +138,7 @@ label mod_day1_wakeup:
     scene sayori_bedroom wipeleft
     show sayori 1 at t11
     s "Well... I guess I'm ready."
-    mc "Alright then, lets get going. Monika did tell me not to keep her lonely after all."
+    mc "Alright then, lets get going. Monika did tell me not to keep her waiting after all."
     "When she hears Monika's name she suddenly smiles."
     s 4r "Well let's go then! I can't wait to see the festival!"
     "Her happy act was enough to get me to smile. But I know that deep down she was still depressed."
@@ -143,7 +149,7 @@ label mod_day1_wakeup:
     mc "Sayori?"
     show sayori 1c at t11
     s "What's up?"
-    "I look around, trying to see if anyone's around."
+    "I look around, trying to see if anyone's near us."
     "The coast is clear."
     mc "Sayori... How are you really feeling?"
     show sayori 1k
@@ -165,7 +171,8 @@ label mod_day1_wakeup:
     s "...thank you."
     "I let go of her, but she still holds onto me."
     mc "You don't need to thank me. I'm only treating you how I should have."
-    "Anyways... I guess we shouldn't leave Monika alone for any longer..."
+    mc "Anyways... I guess we shouldn't leave Monika alone for any longer..."
+    s "Yeah..."
     "Sayori slowly lets go of me, and we resume walking back to school."
     "After just a few more minutes, we're back in the clubroom."
     scene bg club_day with wipeleft_scene 
@@ -192,70 +199,72 @@ label mod_day1_wakeup:
     call mod_day1_morning_converge
 
 label mod_day1_waitoutside:
-    "I think I should let her wake up for herself."
+    "She should be able to wake up on her own."
     "She deserves it after everything that went on yesterday."
-    "But, I shouldn't just leave her to walk to school alone."
+    "But, I can't just leave her to walk to school alone."
     "What kind of person would do that?"
     mc "Monika?"
-    m "Yes?"
-    mc "I think I'm going to go and wait for Sayori to wake up."
-    m 1b "Alright!"
-    m 3a "Don't take too long, though!"
-    scene black wipeleft_scene
-    "I exit the school building and walk to Sayori's house."
+    m "Hmm?"
+    mc "I'm gonna go to Sayori's house and wait for her to wake up."
+    m 3a "Alright, just don't take too long!"
+    scene black with wipeleft_scene
+    "As she finishes her sentence I exit the club and set off on my way to Sayori's house."
     scene bg residential_day with wipeleft_scene
-    "About half an hour after I arrive, Sayori walks through the door, dressed for school, with a sullen look on her face."
+    "I soon arrive at her house and wait at the door. It would be rude if I went in, right?"
+    "I check my phone, Natsuki texted me that she was going to be a bit late today."
+    "After half an hour passes, Sayori suddenly opens the door."
     show sayori 1k at t11
     mc "Hey Sayori!"
     s 1l "Hey..."
     show sayori 1k
-    "She looks like she's been crying again..."
-    "Did I do this?"
-    mc "Ah..."
+    "Her eyes were red and puffy. Knives of guilt dig into me."
+    "I should have been with her this morning... I did this."
+    mc "Sayori...!"
     s 1l "Don't worry about it!"
-    s 1k "Let's just go to school and work on the pamphlets."
-    "Come on, Sayori."
-    "I'm not dumb, and neither are you."
-    "I can see right through this."
-    show sayori 1g
-    mc "I can see when you are putting up an image..."
-    mc "Please..."
+    s "Let's just go to school and work on the pamphlets."
+    show sayori 2d
+    "She flashes a smile at me. The guilt digs deeper into my body."
+    mc "Sayori... anyone can see right through you right now."
     show sayori 1u
-    mc "Don't do that..."
+    "Her expression almost instantly turns darker at my words."
+    s "Please..."
+    s "Don't do that..."
     "She looks like she's going to burst into tears again..."
-    "Oh god..."
+    "What..."
     "{i}What have I done?{/i}"
-    mc "Please tell me what's wrong..."
+    mc "Sayori...I'm...sorry."
     show sayori 1t
-    "She looks at me with a faded smile and tears welling up in her eyes."
+    "Sayori looks at me with a weak smile, but her eyes are welling up with tears."
     s 1v "I..."
     show sayori 1w with hpunch
     "She bursts into tears, her hands in her face."
     s "I thought..."
     s 1v "I thought you didn't care anymore..."
-    "A pit of guilt sat in my stomach."
+    "The guilt digs into my heart now."
+    show sayori 1v:
+        ease 0.5 zoom 2.4 ypos 2.6
     scene black with wipeleft_scene
     play music t9 fadeout 2.0  
-    "I grab on to her and pull her into a tight hug."
-    "I don't even know how tight I was squeezing."
-    "But I wasn't letting this go on any longer."
+    "All I do is grab on to her and hug her tightly."
+    "What am I doing? I don't know anything about her condition... and yet I left her all alone."
     mc "I never realized..."
-    "She started struggling again."
-    "She wasn't hugging back, either."
+    "She wasn't hugging me back."
     s "Please..."
     s "Don't do this to me..."
     s "I don't deserve your attention..."
-    s "I don't deserve anything..."
-    mc "Don't speak like that!"
-    "At this point I was almost crying too."
-    "What had I done?"
-    "What could I have done differently?"
-    mc "I will never leave you."
+    s "I don't deserve anything...!"
+    mc "Don't say that!"
+    "I finally felt the guilt overcome me."
+    "This was my fault."
+    "I had my chance. I dropped it for what? Some useless time waiting for her to come out? I didn't even just wait for her at school."
+    "I was here. Wasting my life away."
+    "I could have been with her, comforted her that I was here."
+    "All I can do now is make up for my own failure."
+    "I have to make up for this. I have to make this right."
+    mc "I won't leave you anymore."
     mc "I meant what I said yesterday."
     mc "I will take care of you, no matter what."
-    mc "And besides, I still get to spend time with the others at the club!"
-    mc "That is what I want."
-    "Sayori begins to hug back, lightly."
+    "Sayori begins to hug me back, lightly."
     mc "We need to get going. We don't want to keep the rest of the club waiting, do we?"
     "Sayori nods her head."
     scene bg residential_day with wipeleft_scene
@@ -263,11 +272,16 @@ label mod_day1_waitoutside:
     "We stop hugging and start walking."
     "She still looks down, though."
     "I really hope she's okay."
+    window hide
+    $ renpy.pause(2)
+    show sayori 1t with alphadissolve2
+    show sayori 1d with alphadissolve2
+    window show
+    "As we walk, Sayori's facade slowly reconstructs itself, and soon she's back to smiling."
     "A few minutes later, we arrive in the clubroom."
     scene bg club_day with wipeleft_scene
-    play music lctheme fadeout 2.0
-    "During our walk there, Sayori was able to build her facade back up... at least a little bit."
-    "I don't blame her. I'm the only one who's seen her darker side."
+    play music lctheme fadein 2.0
+    "Her facade isn't as bright as it usually is, but that's my fault..."
     show monika 1b at t11
     m "Welcome back!"
     m 1a "Yuri and Natsuki still haven't arrived, so we've got some waiting to do."
@@ -276,15 +290,14 @@ label mod_day1_waitoutside:
     mc "She just wasn't feeling well on Friday, so she stayed home to rest. She's still recovering a bit, but she can make it through the festival."
     mc "Right, Sayori?~"
     show sayori 1d at t31
-    "Sayori simply smiles and nods."
-    "I smile with her, but it's hard to do that knowing what's happening in the depths of her mind..."
-    "With that conversation over, I push a desk so that it's right up against another one, let Sayori take a seat, and then sit down next to her."
+    "Sayori gives her a light smile and nods."
+    "I push a desk right up against another one, let Sayori take a seat, and sit down next to her."
     show monika at thide
     hide monika
     show sayori 1k at t11
-    "She rests her head on the desktop and I put an arm around her."
+    "She rests her head on the desktop and I instinctively wrap my arm around her head."
     "I still feel terrible for making her think I forgot about her..."
-    "But there's no taking that back at this point."
+    "But now, I have to be there for her. I can't make the same mistake twice."
     "So for now, we might as well relax while we wait for Yuri and Natsuki."
     call mod_day1_morning_converge
     
@@ -510,6 +523,7 @@ label mod_day1_dead:
    #     truecenter
    #     zoom 0.7 xalign 0.5 yalign 0.05
    #     pause 0.5
+    $ renpy.pause(3)
     show sayori_sway
     "What the hell...?"
     "{i}What the hell??{/i}"
