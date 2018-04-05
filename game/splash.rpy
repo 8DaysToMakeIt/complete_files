@@ -200,6 +200,13 @@ image menu_particles:
     ParticleBurst("gui/menu_particle.png", explodeTime=0, numParticles=20, particleTime=2.0, particleXSpeed=6, particleYSpeed=4).sm
     particle_fadeout
 
+style bottomR:
+    xpos 0.7
+    ypos 0.9
+
+image debug_version:
+    Text("version 20180404_playtest", style="bottomR")
+
 transform particle_fadeout:
     easeout 1.5 alpha 0
 
@@ -346,7 +353,7 @@ label splashscreen:
         scene tos
         with Dissolve(1.0)
         pause 1.0
-        "This game is a fan mod of {i}Doki Doki Literature Club{/i} from Team Salvato."
+        "This game is a fan mod of {i}Doki Doki Literature Club{/i} by Team Salvato."
         "The original game is available at http://ddlc.moe. Do not play {i}Doki Doki CloudBreaker!{/i} unless you have played DDLC previously."
         "Additionally, certain eventualities in {i}Doki Doki CloudBreaker!{/i} may result in emotional distress. Those with depression, anxiety, or other conditions may not be able to play safely."
         "Do not play this mod if you are not certain if it may be safe for you."

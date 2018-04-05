@@ -155,7 +155,6 @@ label modstart_end_yes:
     "But I know that I'll give it everything I've got."
     "Sayori is the most important person to me."
     "And I'll do whatever it takes to have a happy future with her."
-    $ renpy.save("1-1",extra_info="CloudBreaker AutoSave")
     return
 
 

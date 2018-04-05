@@ -4,23 +4,22 @@ label mod_day1_evening:
     play music jazztrack fadeout 2.0
     window show
     "The festival extends through the afternoon and into the evening."
-    "I'm surprised that we managed to do as well as we did."
+    "I'm surprised that we got to see the entire festival."
     "Sayori and I had probably covered just about every area of the school looking for things to do."
-    "In addition, we encounted the other Literature Club members a few times, which was fun."
-    "As we are walking home I only feel a little bit tired..."
+    "We even saw the other club members a few times."
+    "As we walk home, I barely feel tired at all..."
     show sayori 1d zorder 3 at t11
-    "..but all the activities have clearly taken their toll on Sayori."
-    "She's struggling to stand, and is leaning on me for support."
+    "...but all the activities have clearly taken their toll on Sayori."
+    "She is more shuffling along than actually walking, and is leaning on me for support."
     mc "You doing alright, Sayori?"
     s 1e "Mmm..."
-    "Sayori clings tightly to my arm."
-    "Thank goodness we're close to her house; it doesn't look like she'll be able to walk much further."
+    "She's clinging tightly to my arm."
+    "Thank goodness we're close to her house; it doesn't look like she'll be able to go much further."
     show sayori 1k
-    "But then again, she's had time to dwell on her own thoughts lately."
+    "But... she's had time to dwell on her own thoughts lately."
     "It hasn't done her any good."
     show sayori 1y
-    "Maybe she'd want to spend the night with me instead, since she seems happier when I'm around..."
-    "I pause and think for a few seconds..."
+    "Maybe she'd want to spend the night with me instead. She does seems happier when I'm around..."
     menu:
         "What should I do?"
         "Let Sayori sleep over.":
@@ -39,13 +38,14 @@ label mod_day1_evening:
 
 label mod_day1_sleepover:
     mc "Hey, Sayori?"
+    "Sayori looks up at me."
     s 1x "Yeah?"
     "I can't let her stay on her own again."
     mc "Do you want to come over to my house tonight?"
     show sayori 1e with alphadissolve2
-    "Sayori's face starts to go red."
-    mc "Ah!"
-    mc "{i}D-don't misinterpret what I said!{/i}"
+    "Sayori immediately blushes hearing what I said."
+    mc "Don't get the wrong idea... I'm just trying to look after you."
+    "Sayori gives a small smile."
     s 1y "Don't worry, I didn't."
     s 2e "But you don't need to do this, you know..."
     "She always thinks of everyone else over herself..."
@@ -70,7 +70,9 @@ label mod_day1_sleepover:
     s 1r "Ok, I'll go to...{i}your...{/i}"
     "She yawns heavily."
     show sayori 1d
-    "God, she must be really tired." 
+    "God, she must be really tired."
+    "It took me until now for me to realize she was stumbling on her feet."
+    mc "Come on, I'll give you a hand."
     show sayori 1o at hop
     hide sayori with alphadissolve
     "I hoist Sayori up in my arms, and proceed to take her home."
@@ -98,9 +100,9 @@ label mod_day1_sleepover:
     "Thank god we don't have nosy neighbors."
     hide sayori with alphadissolve
     show bg kitchen_night with Dissolve(2.0)
-    "As quickly and quietly as I can, I take her upstairs and into my room."
+    "As quietly as I can, I take her upstairs and into my room."
     show bg bedroom_night with Dissolve(2.0)
-    "I place her down on my bed, taking care to cover her with any blankets that I can find."
+    "I place her down on my bed, taking extra care to cover her with any blankets that I can find."
     s "[player]?"
     "Sayori looks up at me from underneath three layers of blankets."
     "She still has the smile I saw from earlier on."
@@ -133,7 +135,7 @@ label mod_day1_dropoff:
     $ renpy.pause(2)
     show sayori 1k with alphadissolve2
     window show
-    "As we begin walking I notice her sluggish pace."
+    "As we resume walking I notice her sluggish pace."
     mc "Are you feeling alright? How tired are you?"
     s 1e "I-I'm...alright..."
     mc "Are you sure?"
@@ -184,8 +186,8 @@ label mod_day1_dropoff:
     window show
     "Man, it's kinda hard to not think about things right now."
     "I glance over at my desk, I could get on my PC..."
+    "But then again, I could really use some sleep; this day's been pretty busy for me."
     "I look over at my clock, it's about 8..."
-    "I could use a nap right now, this day's been pretty busy for me."
     "I close my eyes for a while and my mind wanders."
     show black
     window hide
@@ -213,7 +215,7 @@ label mod_day1_dropoff:
     "I get up and wash my face in the bathroom."
     "I feel a bit better now, but..."
     "..."
-    "{i}What's wrong with me?{/i}"
+    "God, {i}what's wrong with me?{/i}"
     $ renpy.pause(1.0)
     "Maybe I should think about the better parts of the day..."
     show sayori 1x:
@@ -239,6 +241,7 @@ label mod_day1_dropoff:
     "And with those last thoughts, my mind sinks away into my dreams."
     window hide
     scene black with wipeleft_scene
+    $ sayori_happiness = 1
     python:
         if sayori_happiness > 0:
             renpy.jump("mod_day1_nightevent")
@@ -254,7 +257,7 @@ label mod_day1_nightevent:
     "I groggily sit up and look out the window... it's still dark, save for the light coming from the streetlamps."
     show bg kitchen_night with Dissolve(2.0)
     "I trudge out of my room, almost fall down the stairs, and eventually arrive and the front door."
-    "Whoever's out there is alternating between frantically ringing the doorbell and pounding on the door."
+    "Whoever's there is alternating between frantically ringing the doorbell and pounding on the door."
     "However, I've already figured out who it is at this point."
     play music downpour fadein 5.0
     "I open the door..."
@@ -266,8 +269,9 @@ label mod_day1_nightevent:
     "Sayori quickly throws her arms around me and squeezes me tightly, tears streaming down her face."
     mc "Whoa... Sayori, what's wrong...?"
     s "{cps=20}M-my thoughts... they were being really mean to me...{/cps}"
-    s "They won't get out of my head..."
+    s "Th-they won't get out of my head..."
     s "Help me, [player]..."
+    mc "..."
     "I gently wrap my arms around Sayori and start stroking her hair."
     "She continues crying into my chest."
     mc "{i}Shh... it's okay...{/i}"

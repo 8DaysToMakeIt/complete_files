@@ -523,6 +523,7 @@ init -501 screen main_menu() tag menu:
         #add "menu_art_y"
         #add "menu_art_n"
         add "menu_art_s"
+        add "debug_version"
         frame
 
 
