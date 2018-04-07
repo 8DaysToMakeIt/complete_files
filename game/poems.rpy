@@ -703,10 +703,6 @@ label showpoem(poem=None, music=True, track=None, revert_music=True, img=None, w
         show screen poem(poem, paper=paper)
     else:
         show screen poem(poem)
-    if not persistent.first_poem:
-        $ persistent.first_poem = True
-        show expression "gui/poem_dismiss.png" as poem_dismiss:
-            xpos 1050 ypos 590
     with Dissolve(1)
     $ pause()
     if img:

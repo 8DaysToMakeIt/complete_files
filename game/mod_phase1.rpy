@@ -29,7 +29,7 @@ label modintro:
         "Confirm.":
             $ persistent.playthrough = 1
             pause 1.0
-            $ renpy.full_restart(transition=None, label="splashscreen")
+            jump modstart
     return
     
 label modstart:
@@ -53,7 +53,6 @@ label modstart:
             $ sayori_happiness = 3
             scene bg house with wipeleft_scene
             show sayori 2bv zorder 2 at t11  
-            $ cb_save_reset()
             show expression Text("[sayori_happiness]"):
                 ypos 0.5
             call modstart_end_yes
@@ -61,12 +60,12 @@ label modstart:
             $ sayori_confess = False
             scene bg house with wipeleft_scene
             show sayori 2bv zorder 2 at t11 
-            $ cb_save_reset()
             show expression Text("[sayori_happiness]"):
                 ypos 0.5
             call modstart_end_no
 
     return
+    $ cb_save_reset()
 
 label modstart_end_yes:
     show expression Text("[sayori_happiness]"):

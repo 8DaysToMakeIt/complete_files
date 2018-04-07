@@ -50,25 +50,23 @@ label mod_day1_main:
         "What should I do?"
         "Go wake her up.":
             $ sayori_happiness = sayori_happiness + 1
-            $ cb_save_reset()
             show expression Text("[sayori_happiness]"):
                 ypos 0.5
             call mod_day1_wakeup
         "Let her sleep in.":
             $ sayori_happiness = sayori_happiness - 3
-            $ cb_save_reset()
             show expression Text("[sayori_happiness]"):
                 ypos 0.5
             call mod_day1_ignore
         "Wait outside her house.":
             $ sayori_happiness = sayori_happiness - 1
-            $ cb_save_reset()
             show expression Text("[sayori_happiness]"):
                 ypos 0.5
             call mod_day1_waitoutside
     return 
 
 label mod_day1_wakeup:
+    $ cb_save_reset()
     "If I let Sayori sleep in, she'd feel really bad for waking up late."
     "Besides, I'm a bit worried considering what she said yesterday."
     mc "...you know what?"
@@ -200,6 +198,7 @@ label mod_day1_wakeup:
     call mod_day1_morning_converge
 
 label mod_day1_waitoutside:
+    $ cb_save_reset()
     "She should be able to wake up on her own."
     "She deserves it after everything that went on yesterday."
     "But, I can't just leave her to walk to school alone."
@@ -304,6 +303,7 @@ label mod_day1_waitoutside:
     call mod_day1_morning_converge
     
 label mod_day1_ignore:
+    $ cb_save_reset()
     "Nah, I think I'll let her get some rest."
     show monika at thide
     hide monika

@@ -49,19 +49,18 @@ label mod_day1_afternoon:
         "What should I do?"
         "Let Sayori pay for lunch.":
             $ sayori_happiness = sayori_happiness + 1
-            $ cb_save_reset()
             show expression Text("[sayori_happiness]"):
                 ypos 0.5
             call mod_day1_s_pay
         "Pick up the tab for her.":
             $ sayori_happiness = sayori_happiness - 3
-            $ cb_save_reset()
             show expression Text("[sayori_happiness]"):
                 ypos 0.5
             call mod_day1_mc_pay
     return
 
 label mod_day1_s_pay:
+    $ cb_save_reset()
     "I can't resist the look Sayori is giving me."
     show sayori 1g
     "I sigh."
@@ -77,6 +76,7 @@ label mod_day1_s_pay:
     call mod_day1_an_converge
    
 label mod_day1_mc_pay:
+    $ cb_save_reset()
     "It's alright, it's just a favor after all. Right?"
     mc "Don't worry about it, Sayori. I'll take care of it."
     show sayori 1k

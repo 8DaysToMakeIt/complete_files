@@ -24,19 +24,18 @@ label mod_day1_evening:
         "What should I do?"
         "Let Sayori sleep over.":
             $ sayori_happiness = sayori_happiness + 1
-            $ cb_save_reset()
             show expression Text("[sayori_happiness]"):
                 ypos 0.5
             call mod_day1_sleepover
         "Drop Sayori off at her house.":
             $ sayori_happiness = sayori_happiness - 4
-            $ cb_save_reset()
             show expression Text("[sayori_happiness]"):
                 ypos 0.5
             call mod_day1_dropoff
     return
 
 label mod_day1_sleepover:
+    $ cb_save_reset()
     mc "Hey, Sayori?"
     "Sayori looks up at me."
     s 1x "Yeah?"
@@ -132,6 +131,7 @@ label mod_day1_sleepover:
     jump mod_day2_main
 
 label mod_day1_dropoff:
+    $ cb_save_reset()
     "I glance at Sayori, and notice her signs of fatigue."
     mc "Alright Sayori, we're almost home. Let's keep moving."
     window hide
