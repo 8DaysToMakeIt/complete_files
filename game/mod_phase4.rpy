@@ -48,21 +48,24 @@ label mod_day1_sleepover:
     "Sayori gives a small smile."
     s 1y "Don't worry, I didn't."
     s 2e "But you don't need to do this, you know..."
-    "She always thinks of everyone else over herself..."
-    "It would be a redeeming quality, but she has nothing to redeem to me."
-    mc "I told you that I would help you get rid of the bad thoughts."
-    mc "Plus, I want to do this."
-    mc "When was the last time we had a sleepover?"
+    "She always thinks of other people's feelings rather than her own..."
+    "It would be a redeeming quality, but she doesn't need to redeem anything to me."
+    mc "I'm doing this because I want to do what's best for you."
+    mc "Besides, when was the last time we had a sleepover?"
     show sayori 1y
     "She, again, gives me a small smile."
     s 1c "A few years ago..."
     s 1e "But I still remember it like it was yesterday."
-    "We both stare into each other's eyes for a minute, reminiscing on these old memories."
+    "I stare off into the distance, reminiscing about the past."
+    "Times like when we were stuck after climbing a tree as children, or playing together by the river near our houses..."
     window hide
-    $ renpy.pause(5)
+    show bg residential_evening_blur zorder 998 with Dissolve(8.0)
+    show bg residential_evening zorder 0 with Dissolve(0.2)
     show sayori 1l
     window show
     s "Ah-"
+    "I snap back to reality, and realize I've been staring into Sayori's eyes."
+    "She must have been thinking about our childhood in the same way."
     "She looks away, realizing what was happening."
     mc "Ahaha..."
     mc "Don't worry about it."
@@ -82,7 +85,7 @@ label mod_day1_sleepover:
     s 1e "You really don't have to..."
     "She yawns again, more heavily than last time."
     mc "I'm not having you fall asleep mid-walk."
-    "Plus, you don't exactly weigh much."
+    mc "Plus, you don't exactly weigh much."
     show sayori 1o
     "Sayori takes a moment to think that comment over."
     s 1l "I think that was a compliment, right?"
@@ -126,7 +129,7 @@ label mod_day1_sleepover:
     "{i}Just maybe...{/i}"
     "{i}I made one of those rain clouds go away.{/i}"
     "..."
-    jump mod_day2
+    jump mod_day2_main
 
 label mod_day1_dropoff:
     "I glance at Sayori, and notice her signs of fatigue."
@@ -340,3 +343,4 @@ label mod_day1_nightevent:
     "Maybe I can..."
     "Make this better..."
     "{cps=10}{i}Tomorrow...{/i}{/cps}"
+    jump mod_day2_main

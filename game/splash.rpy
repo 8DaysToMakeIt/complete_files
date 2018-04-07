@@ -193,6 +193,12 @@ image menu_logo:
     zoom 0.60
     menu_logo_move
 
+image mod_logo:
+    "mod_assets/modlogo.png"
+    xpos 0.5
+    ypos 0.5
+    zoom 0.5
+
 image menu_particles:
     2.481
     xpos 224
@@ -205,7 +211,16 @@ style bottomR:
     ypos 0.9
 
 image debug_version:
-    Text("version 20180404_playtest", style="bottomR")
+    Text("version 20180406_playtest", style="bottomR")
+
+image thanks_text:
+    Text("End of playtest demo", style="thanks_style")
+
+style thanks_style:
+        xpos 0.5
+        ypos 0.6
+        font "gui/font/s1.ttf"
+        size 45
 
 transform particle_fadeout:
     easeout 1.5 alpha 0

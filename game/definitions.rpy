@@ -43,7 +43,7 @@ init python:
     def cb_save_reset():
         persistent.anticheat = renpy.random.randint(100000, 999999)
         anticheat = persistent.anticheat
-        delete_all_saves()
+        # delete_all_saves()
         renpy.take_screenshot()
         renpy.save("1-1",extra_info="CloudBreaker AutoSave")
         renpy.save_persistent()
@@ -118,6 +118,7 @@ image end:
     "gui/end.png"
 image bg residential_day = "bg/residential.png"
 image bg residential_evening = "mod_assets/residential_evening.png"
+image bg residential_evening_blur = "mod_assets/residential_evening_blur.png"
 image bg class_day = "bg/class.png"
 image bg corridor = "bg/corridor.png"
 image bg club_day = "bg/club.png"
