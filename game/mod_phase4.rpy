@@ -131,7 +131,8 @@ label mod_day1_sleepover:
     jump mod_day2_main
 
 label mod_day1_dropoff:
-    $ cb_save_reset()
+    $ cb_save_reset() 
+    # $ sayori_happiness = 2
     "I glance at Sayori, and notice her signs of fatigue."
     mc "Alright Sayori, we're almost home. Let's keep moving."
     window hide
@@ -150,13 +151,13 @@ label mod_day1_dropoff:
     show sayori 1f with alphadissolve2
     "As we walk closer and closer to Sayori's house I notice her pace slowing down even more."
     "I guess she must be pretty tired."
-    show sayori 1k
     show black with wipeleft_scene
+    show sayori 1k
     hide black
     "After a few moments we arrive in front of Sayori's house."
     mc "Alright now, you better get some rest."
     "I pat Sayori on the back as she walks to the front door."
-    show sayori 1y
+    show sayori 3y
     "She raises her palm at me, as if she was too tired to properly wave goodbye."
     "I wave back at her."
     mc "Have a nice night."
@@ -253,16 +254,20 @@ label mod_day1_dropoff:
 
 label mod_day1_nightevent:
     $ renpy.pause(5)
+    play music doorbellfar fadein 5.0
+    $ renpy.pause(2)
     window show
     "Suddenly, I'm woken up by the sound of my doorbell ringing repeatedly."
     show screendark zorder 999
     show bg bedroom_night with Dissolve(3.0)
     "I groggily sit up and look out the window... it's still dark, save for the light coming from the streetlamps."
+    play music doorbellclose fadein 2.0 
     show bg kitchen_night with Dissolve(2.0)
     "I trudge out of my room, almost fall down the stairs, and eventually arrive and the front door."
     "Whoever's there is alternating between frantically ringing the doorbell and pounding on the door."
+    stop music fadeout 2.0
     "However, I've already figured out who it is at this point."
-    play music downpour fadein 5.0
+    play music downpour fadein 2.0
     "I open the door..."
     show sayori 4w at t11:
         zoom 2.0 ypos 2.0
@@ -303,6 +308,7 @@ label mod_day1_nightevent:
     show sayori 1v at t11:
         zoom 2.4 ypos 2.3
     mc "How about we sleep together for the rest of the night?"
+    stop music fadeout 2.0
     show sayori 1e with alphadissolve:
         zoom 1.9 ypos 2.275
     "She wipes some of the tears from her eyes and nods."
@@ -311,6 +317,7 @@ label mod_day1_nightevent:
     "I slowly stand up so I don't jar her too much, then carry her upstairs and into my bedroom."
     scene bg bedroom_night with Dissolve(2.0)
     show screendark zorder 999 with Dissolve(1.0)
+    play music silverlining_n fadein 2.0
     "Once we arrive, I try to tuck Sayori in, but she stays latched on to me."
     show sayori 1v at t11:
         zoom 2.4 ypos 2.3
@@ -330,7 +337,7 @@ label mod_day1_nightevent:
     mc "...I'm sorry."
     mc "I love you."
     "Sayori doesn't say anything but I can feel her start to relax."
-    stop music fadeout(5.0)
+    stop music fadeout(20.0)
     scene black with Dissolve(5.0)
     "I close my eyes and wait for sleep to fall over me."
     "All I can do is shout at myself inside my head."

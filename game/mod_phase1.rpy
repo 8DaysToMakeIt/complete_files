@@ -1,6 +1,6 @@
 label modintro:
     show black zorder 4 with dissolve_cg
-    play music m1 fadeout 2.0
+    play music introtrack fadein 4.0
     pause 2.0
     call screen dialog("Hmm...", ok_action=Return())
     call screen dialog("Looks like some new files have appeared...", ok_action=Return())

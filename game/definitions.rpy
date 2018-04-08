@@ -104,6 +104,15 @@ define audio.confesslofi = "<to 196.693 loop 11.621>mod_assets/St4-confession.mp
 define audio.lctheme = "mod_assets/St4-LCtheme.mp3"
 define audio.jazztrack = "mod_assets/St4-jazzyshit.ogg"
 define audio.downpour = "mod_assets/Downpour.mp3"
+define audio.introtrack = "mod_assets/St4-PacketFlood.mp3"
+define audio.festivaltime = "mod_assets/FestivalTime.mp3"
+
+define audio.silverlining_d = "<loop 17.944>mod_assets/SilverLining_Day.mp3"
+define audio.silverlining_e = "mod_assets/SilverLining_Evening.mp3"
+define audio.silverlining_n = "mod_assets/SilverLining_Night.mp3"
+
+define audio.doorbellfar = "mod_assets/D1N_special1.mp3"
+define audio.doorbellclose = "mod_assets/D1N_special2.mp3"
 
 define alphadissolve = Dissolve(0.5, alpha=True)
 define alphadissolve2 = Dissolve(2.0, alpha=True)

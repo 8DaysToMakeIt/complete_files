@@ -1,5 +1,6 @@
 label mod_day2_main:
     show black
+    play music introtrack fadein(6.0)
     show mod_logo with Dissolve(2.0)
     show thanks_text with Dissolve(2.0)
     $ renpy.pause(2.0)

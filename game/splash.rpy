@@ -211,7 +211,7 @@ style bottomR:
     ypos 0.9
 
 image debug_version:
-    Text("version 20180406_2_playtest", style="bottomR")
+    Text("version 20180407_playtest", style="bottomR")
 
 image thanks_text:
     Text("End of playtest demo", style="thanks_style")

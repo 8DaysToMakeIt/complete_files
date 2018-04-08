@@ -1,8 +1,8 @@
 
 
 label mod_day1_afternoon:
-    scene bg corridor with wipeleft_scene
     stop music fadeout 2.0
+    scene bg corridor with wipeleft_scene
     show sayori 1a at t11
     "After the Literature Club's event, we decided to split up for the rest of the festival, since there is so much to do and everyone has their own interests."
     "We had a pretty good turnout, and a lot of people seemed excited watching us recite our poems."
@@ -11,6 +11,7 @@ label mod_day1_afternoon:
     "We'll have to see how it all plays out tomorrow."
     show black with wipeleft
     scene bg courtyard with wipeleft_scene
+    play music festivaltime fadein 2.0
     "As we walk around in the courtyard, we observe the numerous food stands set up around the place."
     show sayori 1x at hop
     "Sayori excitedly looks around."
@@ -25,10 +26,10 @@ label mod_day1_afternoon:
     "With that, Sayori runs off in a random direction, and I start browsing the stands closest to me."
     show black with wipeleft
     hide black with wipeleft
-    "5 minutes later, we meet up at the registers, ready to pay for our food."
+    "Five minutes later, we meet up at the registers, ready to pay for our food."
     "I got myself a bowl of ramen, and spot Sayori with a container of sushi."
     show sayori 1a at t11
-    "We take our food to the registers. I take my wallet out to bay for both of us, but then I notice Sayori has her purse out."
+    "We take our food to the registers. I take my wallet out to pay for both of us, but then I notice Sayori has her purse out."
     mc "Don't trouble yourself, Sayori..."
     show sayori 1b
     mc "I can take care of it."
@@ -119,6 +120,7 @@ label mod_day1_an_converge:
     show sayori 1r
     "I see her scoop up the entire lump of wasabi with one of her chopsticks and put it into her mouth."
     show sayori 1q
+    stop music fadeout 2.0
     s "{i}Mmmf...!{/i}"
     play music t7 fadein 5.0
     window hide
@@ -132,12 +134,15 @@ label mod_day1_an_converge:
     "Sayori frantically reaches for her water bottle, almost fumbling and spilling it."
     "As she guzzles the water, her face suddenly glows, turning even redder."
     s "{i}Mmmpmfh!{/i}"
-    show sayori 1m
+    show sayori 1m at breathing
     "Sayori spits out the water and frantically gasps for air."
     "I can't help but chuckle a little at the scene."
     mc "If you had let me finish, I would've told you it was spicy..."
+    stop music fadeout 2.0
+    show sayori 5a at t11
     s 5a "S-sorry..."
     s 5b "Guess my curiosity got the best of me, hehe~"
+    play music festivaltime fadein 2.0
     "I smile; we always had little moments like this when we were younger."
     "There's some good emotion in this nostalgia, but I can't seem to identify it."
     "Something about it makes it sink into my gut, like I can't truly experience it..."

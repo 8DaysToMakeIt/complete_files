@@ -42,6 +42,12 @@ transform hop(x=640, z=0.80):
     easein .1 yoffset -20
     easeout .1 yoffset 0
 
+transform breathing(x=640, z=0.80):
+    xcenter x yoffset 0 yanchor 1.0 ypos 1.03 zoom z*1.00 alpha 1.00 subpixel True
+    easein .3 yoffset -10
+    easeout .3 yoffset 0
+    repeat
+
 transform hopfocus(x=640, z=0.80):
     xcenter x yoffset 0 yanchor 1.0 ypos 1.03 zoom z*1.05 alpha 1.00 subpixel True
     easein .1 yoffset -21

@@ -15,6 +15,7 @@ label mod_day1_main:
     stop music fadeout 2.0
     scene bg residential_day
     with dissolve_scene_full
+    play music silverlining_d fadein 4.0
 
     "It's the day of the festival."
     "Of all the days, I expected this to be the one where I'd be walking to school with Sayori."
@@ -75,6 +76,7 @@ label mod_day1_wakeup:
     m 1b "Alrighty then! Just don't leave me here alone for too long~"
     scene black with wipeleft
     "After hearing Monika's words I immediately exit the clubroom, and begin walking to Sayori's house."
+    stop music fadeout 2.0
     scene bg house with wipeleft
     "After a few minutes of walking I reach Sayori's house."
     "I ring the bell once, but don't get an answer."
@@ -224,7 +226,8 @@ label mod_day1_waitoutside:
     s 1l "Don't worry about it!"
     s "Let's just go to school and work on the pamphlets."
     show sayori 2d
-    "Sayori forces a smile"
+    "Sayori forces a smile."
+    stop music fadeout 2.0
     mc "Sayori... anyone can see right through you right now."
     show sayori 1u
     "Sayori's smile disappears."
@@ -244,7 +247,7 @@ label mod_day1_waitoutside:
     show sayori 1v:
         ease 0.5 zoom 2.4 ypos 2.6
     scene black with wipeleft_scene
-    play music t9 fadeout 2.0  
+    play music downpour fadein 2.0  
     "All I do is grab on to her and hug her tightly."
     "What am I doing? I don't know anything about her condition... and yet I left her all alone."
     mc "I never realized..."
@@ -279,6 +282,7 @@ label mod_day1_waitoutside:
     window show
     "As we walk, Sayori's facade slowly reconstructs itself, and soon she's back to smiling."
     "A few minutes later, we arrive in the clubroom."
+    stop music fadeout 2.0
     scene bg club_day with wipeleft_scene
     play music lctheme fadein 2.0
     "Her facade isn't as bright as it usually is, but that's my fault..."
@@ -341,7 +345,7 @@ label mod_day1_ignore:
     "I get out my phone to text her that she should probably wake up, but right as I'm about to start, the clubroom door flies open."
     show sayori 1p at t31
     s "{i}*Haaah... haaahh...*{/i}"
-    s "I-I'm so sorry I'm late, MC!"
+    s "I-I'm so sorry I'm late, [player]!"
     show sayori at t11
     s 1m "I didn't miss anything, did I?"
     show monika 1a at t31
@@ -413,6 +417,7 @@ label mod_day1_dead:
     stop music fadeout 2.0
     scene bg residential_day
     with dissolve_scene_full
+    play music silverlining_d fadein 4.0
 
     "It's the day of the festival."
     "Of all days, I expected this to be the one where I'd be walking to school with Sayori."
@@ -465,6 +470,7 @@ label mod_day1_dead:
     "Each member's poem is neatly printed on its own page, giving it an almost professional feel."
     "I recognize Natsuki's and Yuri's poems from the ones they performed during our practice."
     mc "What's this...?"
+    stop music fadeout 2.0
     "I flip to Sayori's poem."
     "It's different from the one she practiced."
     "It's one that I haven't read before..."
@@ -577,6 +583,7 @@ label mod_day1_dead:
     "Never..."
     pause 2.0
     show sayori_sway
+    play music introtrack fadein 2.0
     call screen dialog("Well... you did it. You killed her.", ok_action=Return())
     call screen dialog("Honestly, I'm surprised.", ok_action=Return())
     call screen dialog("Did you {i}really{/i} think turning down her confession would make it any better?", ok_action=Return())
