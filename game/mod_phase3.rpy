@@ -83,18 +83,18 @@ label mod_day1_mc_pay:
     show sayori 1k
     "Traces of disappointment appear on her face."
     s "Aw..."
-    "I give her a quick shoulder pat I have to show her that I care about her."
+    "I pat her shoulder. I have to show her that I care about her."
     show sayori 1g
     mc "It's alright. You should worry more about yourself than doing me a favor."
     show sayori 1d
     "She looks up and gives me a weak smile."
     "I hand the cashier some yen, and pay for the meal."
-    "My worries about Sayori start acting up."
+    "As I do, my worries about Sayori start acting up."
     show sayori 1f
     "She probably wanted to do this by herself..."
     "I see her upset expression out of the corner of my eye."
     show sayori 1g
-    mc "Alright... I'll let you pay for the tip. It's the least I can let you do."
+    mc "Alright... I'll let you cover the tip."
     show sayori 1a
     "It's also the least I can do to make it up to her."
     "Regardless, Sayori's expression lights up at this offer."

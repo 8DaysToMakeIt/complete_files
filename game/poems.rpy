@@ -418,7 +418,7 @@ Of.
 My.
 Head.\n\n\n
 Get out of my head before I do what I know is best for you.
-Get out of my head before I listen to everything she said to me.
+Get out of my head before I listen to everything it said to me.
 Get out of my head before I show you how much I love you.
 Get out of my head before I finish writing this poem.\n\n\n\n\n\n\n
 But a poem is never actually finished.

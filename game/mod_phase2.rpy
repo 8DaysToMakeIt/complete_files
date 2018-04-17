@@ -15,7 +15,6 @@ label mod_day1_main:
     stop music fadeout 2.0
     scene bg residential_day
     with dissolve_scene_full
-    play music silverlining_d fadein 4.0
 
     "It's the day of the festival."
     "Of all the days, I expected this to be the one where I'd be walking to school with Sayori."
@@ -102,14 +101,15 @@ label mod_day1_wakeup:
     mc "Sayori?"
     mc "You awake?"
     "As I peek in I notice Sayori sleeping in her bed."
-    play music "bgm/5_sayori.ogg" fadeout 2.0
+#    play music "bgm/5_sayori.ogg" fadeout 2.0
     "Seeing her like that is kind of heartwarming..."
     "But I can't be thinking like that right now. How can I wake her up...?"
     "I decide to just gently shake her."
     mc "Come on Sayori, wake up."
     show sayori 1bp at t11 with hpunch
     "A few shakes later, Sayori opens her eyes sleepily."
-    s "Mmph... wh-wha...?"
+    play music silverlining_d fadein 2.0
+    s "Mngh... wh-wha...?"
     mc "It's time for the festival!"
     show sayori 4bm
     "Upon hearing those words Sayori shuffles a bit in her bed."
@@ -148,11 +148,13 @@ label mod_day1_wakeup:
     mc "Sayori?"
     show sayori 1c at t11
     s "What's up?"
+    stop music fadeout 2.0
     "I look around, checking to see if anyone else is near us."
     mc "Sayori... how are you really feeling?"
     show sayori 1k
     "She looks around as well, and sighs when she notices we're alone."
     s 1l "I-I don't really know..."
+    play music harshreality fadein 2.0
     s "I appreciate you caring enough to wake me up..."
     s "But you're just wasting your time on me..."
     "I grab her by the shoulders and look her in the eyes."
@@ -162,21 +164,23 @@ label mod_day1_wakeup:
     show sayori 1t
     mc "I want to do anything I can do to help you. Even if you don't understand what you're feeling."
     mc "Please...trust in me. I only want what's best for both of us."
+    show sayori 1t:
+         ease 0.5 zoom 2.4 ypos 2.6
     scene black with wipeleft
     "I pull her into a hug."
     "After a few moments, her arms tightly wrap around me."
-    stop music fadeout 2.0
     s "I-I know I've said this a lot to you, but..."
     s "...thank you."
     "I let go of her, but she still holds onto me."
     mc "You don't need to thank me. I'm only treating you how I should have."
     mc "Anyways... I guess we shouldn't leave Monika alone for any longer..."
     s "Yeah..."
+    stop music fadeout 2.0
     "Sayori slowly lets go of me, and we resume walking back to school."
     "After just a few more minutes, we're back in the clubroom."
     scene bg club_day with wipeleft_scene 
     show monika 1b at t11
-    play music lctheme fadeout 2.0
+    play music sunnyday fadeout 2.0
     m "Welcome back!"
     m 1d "Is Sayori doing alright?"
     mc "{cps=30}Yeah, she--{/cps}{nw}"
@@ -240,6 +244,7 @@ label mod_day1_waitoutside:
     "Tears well up in Sayori's eyes."
     s 1v "I..."
     show sayori 1w with hpunch
+    play music downpour fadein 2.0
     "She bursts into tears, her hands in her face."
     s "I thought..."
     s 1v "I thought you didn't care anymore..."
@@ -248,22 +253,20 @@ label mod_day1_waitoutside:
         ease 0.5 zoom 2.4 ypos 2.6
     scene black with wipeleft_scene
     play music downpour fadein 2.0  
-    "All I do is grab on to her and hug her tightly."
+    "I grab on to her and hug her tightly."
     "What am I doing? I don't know anything about her condition... and yet I left her all alone."
     mc "I never realized..."
-    "She wasn't hugging me back."
+    "She isn't hugging me back."
     s "Please..."
     s "Don't do this to me..."
     s "I don't deserve your attention..."
     s "I don't deserve anything...!"
     mc "Don't say that!"
-    "I finally felt the guilt overcome me."
+    "I finally feel the guilt overcome me."
     "This was my fault."
-    "I had my chance. I dropped it for what? Some useless time waiting for her to come out? I didn't even just wait for her at school."
-    "I was here. Wasting my life away."
-    "I could have been with her, comforted her that I was here."
+    "I could have been with her, and comforted her that I was here."
     "All I can do now is make up for my own failure."
-    "I have to make up for this. I have to make this right."
+    "I have to make this right."
     mc "I won't leave you anymore."
     mc "I meant what I said yesterday."
     mc "I will take care of you, no matter what."
@@ -277,6 +280,7 @@ label mod_day1_waitoutside:
     "I really hope she's okay."
     window hide
     $ renpy.pause(2)
+    stop music fadeout 4.0
     show sayori 1t with alphadissolve2
     show sayori 1d with alphadissolve2
     window show
@@ -284,8 +288,9 @@ label mod_day1_waitoutside:
     "A few minutes later, we arrive in the clubroom."
     stop music fadeout 2.0
     scene bg club_day with wipeleft_scene
-    play music lctheme fadein 2.0
+    play music sunnyday fadein 2.0
     "Her facade isn't as bright as it usually is, but that's my fault..."
+    play music sunnyday fadein 2.0
     show monika 1b at t11
     m "Welcome back!"
     m 1a "Yuri and Natsuki still haven't arrived, so we've got some waiting to do."
@@ -311,7 +316,6 @@ label mod_day1_ignore:
     "Nah, I think I'll let her get some rest."
     show monika at thide
     hide monika
-    play music lctheme fadeout 2.0
     "She must be a bit tired after everything she went through yesterday."
     "In the meantime, I take a good look around the room."
     "The walls are still a bit bare, but I figure it'd be easier to take care of that when the others arrive."
@@ -343,6 +347,7 @@ label mod_day1_ignore:
     stop music fadeout 2.0
     "Geez, Sayori really is a heavy sleeper, isn't she?"
     "I get out my phone to text her that she should probably wake up, but right as I'm about to start, the clubroom door flies open."
+    play music sunnyday fadeout 2.0
     show sayori 1p at t31
     s "{i}*Haaah... haaahh...*{/i}"
     s "I-I'm so sorry I'm late, [player]!"
@@ -357,7 +362,7 @@ label mod_day1_ignore:
     show monika at thide
     hide monika
     "Still panting, Sayori walks over to the desk next to mine and slumps down into the seat, resting her head on the desktop."
-    "A tinge of sadness runs through me; she was probably waiting for me to greet her as she left her house..."
+    "A tinge of guilt runs through me; she was probably waiting for me to greet her as she left her house..."
     "...or maybe she needed me to wake her up after all."
     "I pause for a moment, then pull my desk right up to hers and put an arm around her."
     "It's the least I can do."
@@ -417,7 +422,6 @@ label mod_day1_dead:
     stop music fadeout 2.0
     scene bg residential_day
     with dissolve_scene_full
-    play music silverlining_d fadein 4.0
 
     "It's the day of the festival."
     "Of all days, I expected this to be the one where I'd be walking to school with Sayori."
@@ -525,7 +529,7 @@ label mod_day1_dead:
     mc "{cps=30}.......Sayo--{/cps}{nw}"
     window hide(None)
     window auto
-    play music td
+    play music lefthanging
     show s_kill_bg
     show sayori_sway
    # show s_kill:
@@ -581,6 +585,8 @@ label mod_day1_dead:
     "Never."
     "Never."
     "Never..."
+    window hide
+    stop music fadeout 2.0
     pause 2.0
     show sayori_sway
     play music introtrack fadein 2.0

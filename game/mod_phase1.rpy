@@ -154,7 +154,7 @@ label modstart_end_yes:
     "But I know that I'll give it everything I've got."
     "Sayori is the most important person to me."
     "And I'll do whatever it takes to have a happy future with her."
-    return
+    jump mod_day1_main
 
 
 label modstart_end_no:
@@ -215,5 +215,5 @@ label modstart_end_no:
     "Sayori will always be my dearest friend."
     "And I'll do whatever it takes to put a smile on her face every day."
     $ renpy.save("1-1",extra_info="CloudBreaker AutoSave")
-    return
+    jump mod_day1_dead
 # Decompiled by unrpyc: https://github.com/CensoredUsername/unrpyc

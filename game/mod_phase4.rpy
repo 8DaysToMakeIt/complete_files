@@ -1,7 +1,7 @@
 label mod_day1_evening:
     show screendark zorder 999
     show bg residential_evening with wipeleft_scene
-    play music jazztrack fadeout 2.0
+    play music silverlining_e fadeout 2.0
     window show
     "The festival extends through the afternoon and into the evening."
     "I'm surprised that we got to see the entire festival."
@@ -101,8 +101,10 @@ label mod_day1_sleepover:
     "I smile, seeing my house just ahead of us."
     "Thank god we don't have nosy neighbors."
     hide sayori with alphadissolve
+    stop music fadeout 2.0
     show bg kitchen_night with Dissolve(2.0)
     "As quietly as I can, I take her upstairs and into my room."
+    play music silverlining_n fadeout 2.0
     show bg bedroom_night with Dissolve(2.0)
     "I place her down on my bed, taking extra care to cover her with any blankets that I can find."
     s "[player]?"
@@ -115,10 +117,16 @@ label mod_day1_sleepover:
     s "No..."
     "I hear her shift to the other side of the bed."
     "Thank god I bought a double bed."
-    show sayori 1y at t11 with alphadissolve2
+    show sayori 1y at t11: # with alphadissolve2
+        ypos 3.0
+        ease 1.5 ypos 1.3
+    pause 1.5
     s "Just get in..."
-    hide sayori with alphadissolve
+    show sayori:
+        zoom 0.76
+        ease 1.5 ypos 3.0
     "I smile and do as she asks, pulling the covers back over us."
+    hide sayori
     "I place my head on the pillow, closing my eyes."
     scene black
     show bg longfadebedroom
