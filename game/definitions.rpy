@@ -1,6 +1,6 @@
 define persistent.demo = False
 define persistent.steam = True
-define config.developer = True
+define config.developer = False
 
 python early:
     import singleton
@@ -469,6 +469,9 @@ image sayori 4bv = im.Composite((960, 960), (0, 0), "sayori/2bl.png", (0, 0), "s
 image sayori 4bw = im.Composite((960, 960), (0, 0), "sayori/2bl.png", (0, 0), "sayori/2br.png", (0, 0), "sayori/w.png")
 image sayori 4bx = im.Composite((960, 960), (0, 0), "sayori/2bl.png", (0, 0), "sayori/2br.png", (0, 0), "sayori/x.png")
 image sayori 4by = im.Composite((960, 960), (0, 0), "sayori/2bl.png", (0, 0), "sayori/2br.png", (0, 0), "sayori/y.png")
+
+image sayori 1Lg = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "mod_assets/lewd_g.png")
+image sayori 1Li = im.Composite((960, 960), (0, 0), "sayori/1l.png", (0, 0), "sayori/1r.png", (0, 0), "mod_assets/lewd_i.png")
 
 image sayori glitch:
     "sayori/glitch1.png"

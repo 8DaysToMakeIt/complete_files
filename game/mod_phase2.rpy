@@ -50,18 +50,18 @@ label mod_day1_main:
         "What should I do?"
         "Go wake her up.":
             $ sayori_happiness = sayori_happiness + 1
-            show expression Text("[sayori_happiness]"):
-                ypos 0.5
+            # show expression Text("[sayori_happiness]"):
+            #    ypos 0.5
             call mod_day1_wakeup
         "Let her sleep in.":
             $ sayori_happiness = sayori_happiness - 3
-            show expression Text("[sayori_happiness]"):
-                ypos 0.5
+            # show expression Text("[sayori_happiness]"):
+            #    ypos 0.5
             call mod_day1_ignore
         "Wait outside her house.":
             $ sayori_happiness = sayori_happiness - 1
-            show expression Text("[sayori_happiness]"):
-                ypos 0.5
+            # show expression Text("[sayori_happiness]"):
+            #    ypos 0.5
             call mod_day1_waitoutside
     return 
 

@@ -53,23 +53,23 @@ label modstart:
             $ sayori_happiness = 3
             scene bg house with wipeleft_scene
             show sayori 2bv zorder 2 at t11  
-            show expression Text("[sayori_happiness]"):
-                ypos 0.5
+            # show expression Text("[sayori_happiness]"):
+            #    ypos 0.5
             call modstart_end_yes
         "You'll always be my dearest friend.":
             $ sayori_confess = False
             scene bg house with wipeleft_scene
             show sayori 2bv zorder 2 at t11 
-            show expression Text("[sayori_happiness]"):
-                ypos 0.5
+            # show expression Text("[sayori_happiness]"):
+            #    ypos 0.5
             call modstart_end_no
 
     return
     $ cb_save_reset()
 
 label modstart_end_yes:
-    show expression Text("[sayori_happiness]"):
-        ypos 0.5
+    # show expression Text("[sayori_happiness]"):
+    #    ypos 0.5
     mc "I love you."
     s 1bv "Eh--?"
     mc "Those are my true feelings."

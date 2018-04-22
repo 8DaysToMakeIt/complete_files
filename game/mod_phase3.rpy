@@ -50,13 +50,13 @@ label mod_day1_afternoon:
         "What should I do?"
         "Let Sayori pay for lunch.":
             $ sayori_happiness = sayori_happiness + 1
-            show expression Text("[sayori_happiness]"):
-                ypos 0.5
+            # show expression Text("[sayori_happiness]"):
+            #    ypos 0.5
             call mod_day1_s_pay
         "Pick up the tab for her.":
             $ sayori_happiness = sayori_happiness - 3
-            show expression Text("[sayori_happiness]"):
-                ypos 0.5
+            # show expression Text("[sayori_happiness]"):
+            #    ypos 0.5
             call mod_day1_mc_pay
     return
 

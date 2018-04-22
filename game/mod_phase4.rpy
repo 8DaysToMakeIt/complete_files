@@ -24,13 +24,13 @@ label mod_day1_evening:
         "What should I do?"
         "Let Sayori sleep over.":
             $ sayori_happiness = sayori_happiness + 1
-            show expression Text("[sayori_happiness]"):
-                ypos 0.5
+            # show expression Text("[sayori_happiness]"):
+            #    ypos 0.5
             call mod_day1_sleepover
         "Drop Sayori off at her house.":
             $ sayori_happiness = sayori_happiness - 4
-            show expression Text("[sayori_happiness]"):
-                ypos 0.5
+            # show expression Text("[sayori_happiness]"):
+            #    ypos 0.5
             call mod_day1_dropoff
     return
 
